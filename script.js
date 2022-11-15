@@ -6,10 +6,9 @@ function startGame() {
     document.getElementById('hangManImageField').innerHTML='';
     document.getElementById('youLostMessage').innerHTML='';
     document.getElementById('youLostMessage').innerHTML='';
-        document.getElementById('playedWord').innerHTML='';
+    document.getElementById('playedWord').innerHTML='';
     playingWord =  Math.floor(Math.random() * totalWordsInList);
     playingWordLength = wordsList[playingWord].length;
-    console.log(playingWordLength);
     const textField = document.createElement("input");
     Object.assign (textField, {
         id : "textField" 
@@ -49,26 +48,23 @@ function checkLetter() {
     }
     if (ok == 0) {
         ++failCounter;
-        console.log(failCounter);
-        switch(failCounter){
-            case 1 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h1.png">';
-                break;
-            case 2 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h2.png">';
-                break;
-            case 3 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h3.png">';
-                break;
-            case 4 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h4.png">';
-                break;
-            case 5 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h5.png">';
-                break;
-            case 6 :
-                document.getElementById("hangManImageField").innerHTML = '<img src="h6.png">';
-                break;
+        if (failCounter == 1) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h1.png">';
+        }
+        if (failCounter == 2) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h2.png">';
+        }
+        if (failCounter == 3) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h3.png">';
+        }
+        if (failCounter == 4) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h4.png">';
+        }
+        if (failCounter == 5) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h5.png">';
+        }
+        if (failCounter == 6) {
+            document.getElementById("hangManImageField").innerHTML = '<img src="h6.png">';
         }
     }
     if (failCounter == 6) {
